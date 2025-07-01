@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 222 47% 11%;         /* deep blue */
+  --foreground: 0 0% 95%;            /* #F3F3F3 */
+  --card: 0 0% 100%;                 /* white */
+  --card-foreground: 0 0% 7%;        /* #131313 */
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 7%;
+  --primary: 0 0% 24%;               /* #3C3C3C */
+  --primary-foreground: 0 0% 95%;    /* #F3F3F3 */
+  --secondary: 0 0% 39%;             /* #646464 */
+  --secondary-foreground: 0 0% 95%;  /* #F3F3F3 */
+  --muted: 0 0% 71%;                 /* #B5B5B5 */
+  --muted-foreground: 0 0% 24%;      /* #3C3C3C */
+  --accent: 0 0% 39%;                /* #646464 */
+  --accent-foreground: 0 0% 95%;     /* #F3F3F3 */
+  --destructive: 0 84.2% 60.2%;      /* default red */
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 39%;                /* #646464 */
+  --input: 0 0% 71%;                 /* #B5B5B5 */
+  --ring: 0 0% 24%;                  /* #3C3C3C */
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 222 47% 11%;         /* deep blue */
+  --foreground: 0 0% 95%;            /* #F3F3F3 */
+  --card: 0 0% 24%;                  /* #3C3C3C */
+  --card-foreground: 0 0% 95%;       /* #F3F3F3 */
+  --popover: 0 0% 24%;
+  --popover-foreground: 0 0% 95%;
+  --primary: 0 0% 95%;               /* #F3F3F3 */
+  --primary-foreground: 0 0% 24%;    /* #3C3C3C */
+  --secondary: 0 0% 71%;             /* #B5B5B5 */
+  --secondary-foreground: 0 0% 7%;   /* #131313 */
+  --muted: 0 0% 39%;                 /* #646464 */
+  --muted-foreground: 0 0% 95%;      /* #F3F3F3 */
+  --accent: 0 0% 24%;                /* #3C3C3C */
+  --accent-foreground: 0 0% 95%;     /* #F3F3F3 */
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 0 0% 39%;                /* #646464 */
+  --input: 0 0% 24%;                 /* #3C3C3C */
+  --ring: 0 0% 71%;                  /* #B5B5B5 */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    /* Modern animated gradient background */
+    background: linear-gradient(120deg, #232946 0%, #1e2746 50%, #3e63dd 100%);
+    background-size: 200% 200%;
+    animation: gradientMove 12s ease-in-out infinite;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: url("data:image/svg+xml,%3Csvg width='1000' height='1000' viewBox='0 0 1000 1000' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle opacity='0.08' cx='500' cy='500' r='400' fill='%23ffffff'/%3E%3Ccircle opacity='0.06' cx='200' cy='800' r='200' fill='%233e63dd'/%3E%3Ccircle opacity='0.06' cx='800' cy='200' r='150' fill='%23f5f5f5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(32px);
+    mix-blend-mode: lighten;
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
