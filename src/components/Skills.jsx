@@ -27,15 +27,15 @@ const Skills = () => {
             <div key={skill.name} className="animate-fade-in bg-white/10 rounded-xl p-6 shadow-lg backdrop-blur-md" style={{ animationDelay: `${index * 0.1}s` }}>
               <div className="flex justify-between items-center mb-2">
                 <span className="text-white font-medium">{skill.name}</span>
-                <span className="text-gray-300">{skill.level}%</span>
+                {/* <span className="text-gray-300">{skill.level}%</span> */}
               </div>
-              <div className="relative">
+              {/* <div className="relative">
                 <Progress value={skill.level} className="h-3 bg-gray-700/60" />
                 <div 
                   className="absolute top-0 left-0 h-3 rounded-full bg-gradient-to-r from-blue-400/60 to-purple-400/60 transition-all duration-1000 ease-out"
                   style={{ width: `${skill.level}%` }}
                 />
-              </div>
+              </div> */}
             </div>
           ))}
         </div>
